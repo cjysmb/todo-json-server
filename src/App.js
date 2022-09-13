@@ -1,24 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
+/** Component here */
+import Main from './components/Main';
+import Home from './screens/Home';
+import Todo from './screens/Todo';
+import Doing from './screens/Doing';
+import Done from './screens/Done';
+import NotFound from './screens/404';
+
+/** Style here */
+import './static/styles/navbar.css';
+import './static/styles/global.css';
+import 'antd/dist/antd.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <Main>
+            <Home />
+          </Main>
+        } />
+        <Route path="/todo" element={
+          <Main>
+            <Todo />
+          </Main>
+        } />
+        <Route path="/doing" element={
+          <Main>
+            <Doing />
+          </Main>
+        } />
+        <Route path="/done" element={
+          <Main>
+            <Done />
+          </Main>
+        } />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

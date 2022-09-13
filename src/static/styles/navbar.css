@@ -1,0 +1,32 @@
+.navbar-fixed {
+    /* position: fixed; */
+    padding: 32px;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.navbar-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link-text {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    color: #000;
+}
+
+.nav-link {
+    margin-right: 8px;
+    padding-bottom: 4px;
+    text-decoration: none;
+    border-bottom: 2px solid navy;
+    color: navy;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#todo #doing #done:active {
+    border: 0;
+}
